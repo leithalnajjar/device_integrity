@@ -1,3 +1,7 @@
+## 1.0.1
+
+* Docs: add a donation (Ko-fi) link to the README. No code changes.
+
 ## 1.0.0
 
 * Initial stable release.

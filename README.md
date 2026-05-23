@@ -1,3 +1,7 @@
+## Donation
+
+[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://ko-fi.com/alnajjar)
+
 # device_integrity
 
 [![pub package](https://img.shields.io/pub/v/device_integrity.svg)](https://pub.dev/packages/device_integrity)
