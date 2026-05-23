@@ -120,7 +120,8 @@ class MethodChannelDeviceIntegrity extends DeviceIntegrityPlatform {
     if (result == null) return const [];
     return result
         .whereType<Map>()
-        .map((m) => MaliciousApp.fromMap(m.map((k, v) => MapEntry(k.toString(), v))))
+        .map((m) =>
+            MaliciousApp.fromMap(m.map((k, v) => MapEntry(k.toString(), v))))
         .toList(growable: false);
   }
 

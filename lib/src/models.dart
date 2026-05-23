@@ -51,9 +51,8 @@ class IntegrityResult {
   /// Builds an [IntegrityResult] from a platform-channel map.
   factory IntegrityResult.fromMap(Map<String, dynamic> map) {
     final raw = map['metadata'];
-    final metadata = raw is Map
-        ? raw.map((k, v) => MapEntry(k.toString(), v))
-        : null;
+    final metadata =
+        raw is Map ? raw.map((k, v) => MapEntry(k.toString(), v)) : null;
     return IntegrityResult(
       success: map['success'] as bool? ?? false,
       token: map['token'] as String?,
@@ -232,4 +231,3 @@ class MaliciousApp {
   String toString() =>
       'MaliciousApp(packageName: $packageName, category: $category)';
 }
-

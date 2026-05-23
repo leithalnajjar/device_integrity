@@ -128,8 +128,7 @@ class DeviceIntegrity {
   Future<bool> huaweiEnableAppsCheck() => _platform.huaweiEnableAppsCheck();
 
   /// Returns whether Huawei SafetyDetect AppsCheck is currently enabled.
-  Future<bool> huaweiIsVerifyAppsCheck() =>
-      _platform.huaweiIsVerifyAppsCheck();
+  Future<bool> huaweiIsVerifyAppsCheck() => _platform.huaweiIsVerifyAppsCheck();
 
   /// Returns the list of malicious apps detected by AppsCheck.
   Future<List<MaliciousApp>> huaweiGetMaliciousAppsList() =>

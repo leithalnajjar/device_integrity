@@ -74,7 +74,8 @@ class _HomePageState extends State<_HomePage> {
               runSpacing: 8,
               children: [
                 if (isAndroid)
-                  _btn('Play Integrity (classic)',
+                  _btn(
+                      'Play Integrity (classic)',
                       () => _api.playIntegrityToken(
                           cloudProjectNumber: _gcpProjectNumber)),
                 if (isAndroid)
@@ -84,8 +85,10 @@ class _HomePageState extends State<_HomePage> {
                     return 'prepared';
                   }),
                 if (isAndroid)
-                  _btn('Play Integrity (standard)',
-                      () => _api.playIntegrityStandardToken(requestHash: 'demo')),
+                  _btn(
+                      'Play Integrity (standard)',
+                      () =>
+                          _api.playIntegrityStandardToken(requestHash: 'demo')),
                 if (isAndroid)
                   _btn('Huawei SysIntegrity',
                       () => _api.huaweiSysIntegrity(appId: _hmsAppId)),
@@ -102,8 +105,8 @@ class _HomePageState extends State<_HomePage> {
                 if (isAndroid)
                   _btn('Huawei Enable AppsCheck', _api.huaweiEnableAppsCheck),
                 if (isAndroid)
-                  _btn('Huawei Malicious Apps',
-                      _api.huaweiGetMaliciousAppsList),
+                  _btn(
+                      'Huawei Malicious Apps', _api.huaweiGetMaliciousAppsList),
                 if (isIos) _btn('DeviceCheck token', _api.deviceCheckToken),
                 if (isIos)
                   _btn('App Attest: supported?', _api.isAppAttestSupported),

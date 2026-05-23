@@ -23,7 +23,10 @@ void main() {
         case 'huaweiSysIntegrity':
           return {'success': true, 'token': 'hms-token'};
         case 'huaweiUrlCheck':
-          return {'success': true, 'threats': [1, 3]};
+          return {
+            'success': true,
+            'threats': [1, 3]
+          };
         case 'huaweiUserDetect':
           return {'success': true, 'responseToken': 'ud'};
         case 'huaweiWifiDetect':
@@ -99,11 +102,15 @@ void main() {
     expect((await platform.deviceCheckToken()).token, 'dc');
     expect(await platform.isAppAttestSupported(), isTrue);
     expect((await platform.appAttestGenerateKey()).token, 'keyId');
-    expect((await platform.appAttestAttestKey(keyId: 'k', clientDataHash: 'h'))
-        .token, 'att');
-    expect((await platform.appAttestGenerateAssertion(
-            keyId: 'k', clientDataHash: 'h'))
-        .token, 'asr');
+    expect(
+        (await platform.appAttestAttestKey(keyId: 'k', clientDataHash: 'h'))
+            .token,
+        'att');
+    expect(
+        (await platform.appAttestGenerateAssertion(
+                keyId: 'k', clientDataHash: 'h'))
+            .token,
+        'asr');
   });
 
   test('null result becomes failure', () async {
@@ -113,4 +120,3 @@ void main() {
     expect(r.error, 'No result from platform');
   });
 }
-

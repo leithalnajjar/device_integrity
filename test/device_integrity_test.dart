@@ -23,8 +23,10 @@ class _MockPlatform
   }
 
   @override
-  Future<IntegrityResult> playIntegrityStandardToken({String? requestHash}) async =>
-      IntegrityResult(success: prepared, token: prepared ? 'play-standard' : null);
+  Future<IntegrityResult> playIntegrityStandardToken(
+          {String? requestHash}) async =>
+      IntegrityResult(
+          success: prepared, token: prepared ? 'play-standard' : null);
 
   @override
   Future<IntegrityResult> huaweiSysIntegrity({
@@ -92,8 +94,8 @@ void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
   test('default platform is MethodChannelDeviceIntegrity', () {
-    expect(DeviceIntegrityPlatform.instance,
-        isA<MethodChannelDeviceIntegrity>());
+    expect(
+        DeviceIntegrityPlatform.instance, isA<MethodChannelDeviceIntegrity>());
   });
 
   group('DeviceIntegrity facade', () {
@@ -156,10 +158,14 @@ void main() {
     test('app attest', () async {
       expect(await api.isAppAttestSupported(), isTrue);
       expect((await api.appAttestGenerateKey()).token, 'keyId');
-      expect((await api.appAttestAttestKey(keyId: 'k', clientDataHash: 'h')).token,
+      expect(
+          (await api.appAttestAttestKey(keyId: 'k', clientDataHash: 'h')).token,
           'attest');
-      expect((await api.appAttestGenerateAssertion(keyId: 'k', clientDataHash: 'h'))
-          .token, 'assertion');
+      expect(
+          (await api.appAttestGenerateAssertion(
+                  keyId: 'k', clientDataHash: 'h'))
+              .token,
+          'assertion');
     });
   });
 
