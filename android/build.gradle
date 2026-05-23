@@ -1,0 +1,61 @@
+group = "net.anatech.device_integrity"
+version = "1.0"
+
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+        maven { url 'https://developer.huawei.com/repo/' }
+    }
+
+    dependencies {
+        classpath("com.android.tools.build:gradle:8.9.1")
+    }
+}
+
+rootProject.allprojects {
+    repositories {
+        google()
+        mavenCentral()
+        maven { url 'https://developer.huawei.com/repo/' }
+    }
+}
+
+apply plugin: "com.android.library"
+
+android {
+    namespace = "net.anatech.device_integrity"
+
+    compileSdk = 36
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
+    }
+
+    defaultConfig {
+        minSdk = 24
+    }
+
+    dependencies {
+        // Google Play Integrity API (classic + standard requests)
+        implementation 'com.google.android.play:integrity:1.6.0'
+
+        // Huawei HMS SafetyDetect (SysIntegrity, URL check, User Detect,
+        // Wi-Fi Detect, AppsCheck)
+        implementation 'com.huawei.hms:safetydetect:6.7.0.305'
+
+        // Test dependencies
+        testImplementation("junit:junit:4.13.2")
+    }
+
+    testOptions {
+        unitTests.all {
+            testLogging {
+                events "passed", "skipped", "failed", "standardOut", "standardError"
+                outputs.upToDateWhen {false}
+                showStandardStreams = true
+            }
+        }
+    }
+}
