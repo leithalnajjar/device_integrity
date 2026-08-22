@@ -2,7 +2,7 @@ name: device_integrity
 description: >-
   Flutter plugin for device attestation: Google Play Integrity (classic +
   standard), Huawei SafetyDetect, Apple DeviceCheck and App Attest.
-version: 1.0.1
+version: 1.0.2
 homepage: https://github.com/leithalnajjar/device_integrity
 repository: https://github.com/leithalnajjar/device_integrity
 issue_tracker: https://github.com/leithalnajjar/device_integrity/issues

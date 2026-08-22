@@ -70,9 +70,12 @@ file from AppGallery Connect dropped into `android/app/`.
 ### iOS
 
 - Deployment target: **iOS 14.0** (App Attest requires it).
+- Works with both **CocoaPods** and **Swift Package Manager** — no
+  extra setup either way. (Flutter's SPM support is opt-in; see
+  [flutter.dev/to/spm](https://docs.flutter.dev/packages-and-plugins/swift-package-manager/for-app-developers).)
 - Add the `DeviceCheck` capability to your app on Apple Developer
   Portal (no extra entitlement file is required — the framework is
-  linked by the podspec).
+  linked by the plugin).
 - For App Attest, your provisioning profile must include the
   **App Attest** entitlement (`com.apple.developer.devicecheck.appattest-environment`)
   set to `production` (or `development` for testing).

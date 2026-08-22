@@ -4,7 +4,7 @@
 #
 Pod::Spec.new do |s|
   s.name             = 'device_integrity'
-  s.version          = '1.0.1'
+  s.version          = '1.0.2'
   s.summary          = 'Flutter device integrity / attestation plugin (Play Integrity, SafetyDetect, DeviceCheck, App Attest).'
   s.description      = <<-DESC
 A unified Flutter plugin for device attestation:
@@ -16,7 +16,7 @@ DESC
   s.license          = { :file => '../LICENSE' }
   s.author           = { 'Laith Alnajjar' => 'info@ana-tech.net' }
   s.source           = { :path => '.' }
-  s.source_files     = 'Classes/**/*'
+  s.source_files     = 'device_integrity/Sources/device_integrity/**/*.swift'
   s.dependency 'Flutter'
   s.platform         = :ios, '14.0'
   s.frameworks       = 'DeviceCheck'
@@ -25,5 +25,5 @@ DESC
   s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES', 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386' }
   s.swift_version = '5.0'
 
-  s.resource_bundles = {'device_integrity_privacy' => ['Resources/PrivacyInfo.xcprivacy']}
+  s.resource_bundles = {'device_integrity_privacy' => ['device_integrity/Sources/device_integrity/PrivacyInfo.xcprivacy']}
 end

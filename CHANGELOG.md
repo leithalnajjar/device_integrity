@@ -1,3 +1,12 @@
+## 1.0.2
+
+* **iOS**: add Swift Package Manager support. The plugin now ships both a
+  `Package.swift` (for projects with Flutter's SPM support enabled) and the
+  existing CocoaPods podspec — no migration needed on the app side.
+* iOS sources moved to the standard SPM layout
+  (`ios/device_integrity/Sources/device_integrity/`); the privacy manifest is
+  bundled as an SPM resource and still shipped via CocoaPods as before.
+
 ## 1.0.1
 
 * Docs: add a donation (Ko-fi) link to the README. No code changes.
