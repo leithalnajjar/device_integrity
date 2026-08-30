@@ -332,9 +332,15 @@ public class DeviceIntegrityChecker implements MethodChannel.MethodCallHandler {
     }
 
     private static String generateNonce() {
-        byte[] bytes = new byte[24];
+        byte[] bytes = new byte[32];
         new SecureRandom().nextBytes(bytes);
-        return android.util.Base64.encodeToString(bytes, android.util.Base64.NO_WRAP);
+
+        return android.util.Base64.encodeToString(
+                bytes,
+                android.util.Base64.URL_SAFE
+                        | android.util.Base64.NO_WRAP
+                        | android.util.Base64.NO_PADDING
+        );
     }
 
     private static byte[] generateNonceBytes() {
