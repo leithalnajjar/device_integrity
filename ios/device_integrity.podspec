@@ -4,7 +4,7 @@
 #
 Pod::Spec.new do |s|
   s.name             = 'device_integrity'
-  s.version          = '1.0.2'
+  s.version          = '1.0.3'
   s.summary          = 'Flutter device integrity / attestation plugin (Play Integrity, SafetyDetect, DeviceCheck, App Attest).'
   s.description      = <<-DESC
 A unified Flutter plugin for device attestation:

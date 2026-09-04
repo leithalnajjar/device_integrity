@@ -1,3 +1,9 @@
+## 1.0.3
+
+* **Android**: fix Play Integrity nonce format. The generated nonce is now
+  32 bytes (up from 24) and URL-safe base64 without padding, so it reliably
+  meets the Play Integrity API's nonce format requirements.
+
 ## 1.0.2
 
 * **iOS**: add Swift Package Manager support. The plugin now ships both a
